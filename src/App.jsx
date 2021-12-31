@@ -171,9 +171,9 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to CollArt DAO</h1>
+        <h1>Bienvenido al Club de Arte [DAO]</h1>
         <button onClick={() => connectWallet("injected")} className="btn-hero">
-          Connect your wallet
+          Conéctate
         </button>
       </div>
     );
@@ -182,10 +182,10 @@ const App = () => {
   if (error instanceof UnsupportedChainIdError) {
     return (
       <div className="unsupported-network">
-        <h2>Please connect to Rinkeby</h2>
+        <h2>Por favor conéctate a Rinkeby</h2>
         <p>
-          This dapp only works on the Rinkeby network, please switch networks in
-          your connected wallet.
+          Esta dapp solo funciona en la red Rinkeby, cambie la red en tu
+          monedero conectado.
         </p>
       </div>
     );
@@ -196,16 +196,16 @@ const App = () => {
   if (hasClaimedNFT) {
     return (
       <div className="member-page">
-        <h1>🍪CollArt DAO Member Page</h1>
-        <p>Congratulations on being a member</p>
+        <h1>Club de Arte [DAO]</h1>
+        <p>Felicitaciones por ser miembro!!!</p>
         <div>
           <div>
-            <h2>Member List</h2>
+            <h2>Lista de Miembros</h2>
             <table className="card">
               <thead>
                 <tr>
-                  <th>Address</th>
-                  <th>Token Amount</th>
+                  <th>Dirección</th>
+                  <th>Cantidad de Tokens</th>
                 </tr>
               </thead>
               <tbody>
@@ -221,7 +221,7 @@ const App = () => {
             </table>
           </div>
           <div>
-            <h2>Active Proposals</h2>
+            <h2>Propuestas Actuales</h2>
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -333,14 +333,14 @@ const App = () => {
               ))}
               <button disabled={isVoting || hasVoted} type="submit">
                 {isVoting
-                  ? "Voting..."
+                  ? "Votando..."
                   : hasVoted
-                  ? "You Already Voted"
-                  : "Submit Votes"}
+                  ? "Ya habías Votado"
+                  : "Votar"}
               </button>
               <small>
-                This will trigger multiple transactions that you will need to
-                sign.
+                Esto desencadenará múltiples transacciones que necesitará
+                firmar.
               </small>
             </form>
           </div>
@@ -373,9 +373,9 @@ const App = () => {
   // Render mint nft screen.
   return (
     <div className="mint-nft">
-      <h1>Mint your CollArt 🍪 DAO Membership NFT</h1>
+      <h1>Crea tu NFT de Membresía a la DAO</h1>
       <button disabled={isClaiming} onClick={() => mintNft()}>
-        {isClaiming ? "Minting..." : "Mint your nft (FREE)"}
+        {isClaiming ? "Creando..." : "Crea tu Nft (GRATIS)"}
       </button>
     </div>
   );
